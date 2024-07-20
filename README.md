@@ -54,16 +54,3 @@ export const SlideAnimations = {
       }, duration)
     })
   },
-  slideToggle: function (element, duration = 500) {
-    if (window.getComputedStyle(element).display === 'none') {
-      return this.slideDown(element, duration)
-    } else {
-      return this.slideUp(element, duration)
-    }
-  },
-}# Noreton
-
-let data = [
-  [1, 2, 3, 4, 5],
-  ['a', 'b', 'c', 'd', 'i'],
-]
