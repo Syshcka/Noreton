@@ -56,6 +56,17 @@ export const SlideAnimations = {
   },
 //
 ///
+
+def wait_until(condition, description, timeout=300, period=0.25, *args, **kwargs):
+    final_time = time.time() + timeout
+    while time.time() < final_time:
+        # Вызываем переданную функцию
+        # Если ее возвращаемое значение эквивалентно True, то ожидание завершается
+        if condition(*args, **kwargs):
+            return True
+        # Если нет - ждем дальше
+        time.sleep(period)
+    raise TimeoutError(f'Timed out waiting for condition: [{description}]')
 //
 ..
 .
